@@ -9,6 +9,7 @@ import {
 } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages';
+import { LoadingService } from '../providers';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,13 @@ import { HomePage } from '../pages';
     MyApp,
     HomePage
   ],
-  providers: [{
-    provide: ErrorHandler,
-    useClass: IonicErrorHandler
-  }]
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass: IonicErrorHandler
+    },
+    LoadingService
+  ]
 })
 export class AppModule {
 }
